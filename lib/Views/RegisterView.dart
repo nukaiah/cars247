@@ -26,7 +26,7 @@ class _RegisterViewState extends State<RegisterView> {
               backgroundColor: indClr,
               child: Icon(Icons.car_crash,color: bgColor,size: 40,),
             ),
-            const SizedBox(height: 40),
+            const SizedBox(height: 20),
             Row(
               children: [
                 Flexible(
