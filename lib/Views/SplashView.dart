@@ -16,7 +16,7 @@ class _SplashViewState extends State<SplashView> {
   void initState() {
     Future.delayed(const Duration(seconds: 2)).whenComplete((){
       if(mounted){
-        Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (_)=>const LandingView()), (route)=>false);
+        Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (_)=>const LoginView()), (route)=>false);
       }
     });
 
