@@ -7,7 +7,7 @@ import 'package:carwash/Constants/SliverAppBar.dart';
 import 'package:carwash/Views/DashboardView.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:razorpay_flutter/razorpay_flutter.dart';
+// import 'package:razorpay_flutter/razorpay_flutter.dart';
 
 class BookAppointmentView extends StatefulWidget {
   CarWashService carWashService;
@@ -57,10 +57,10 @@ class _BookAppointmentViewState extends State<BookAppointmentView> {
   @override
   void initState() {
     LoopDates();
-    timeSolotslist = generateTimeSlots();
-    _razorpay.on(Razorpay.EVENT_PAYMENT_SUCCESS, _handlePaymentSuccess);
-    _razorpay.on(Razorpay.EVENT_PAYMENT_ERROR, _handlePaymentError);
-    _razorpay.on(Razorpay.EVENT_EXTERNAL_WALLET, _handleExternalWallet);
+    // timeSolotslist = generateTimeSlots();
+    // _razorpay.on(Razorpay.EVENT_PAYMENT_SUCCESS, _handlePaymentSuccess);
+    // _razorpay.on(Razorpay.EVENT_PAYMENT_ERROR, _handlePaymentError);
+    // _razorpay.on(Razorpay.EVENT_EXTERNAL_WALLET, _handleExternalWallet);
     super.initState();
   }
 
@@ -313,17 +313,17 @@ class _BookAppointmentViewState extends State<BookAppointmentView> {
     );
   }
 
-  final _razorpay = Razorpay();
-  var options;
-  var textLength = 0;
-  var textLength1 = 0;
-  bool isLoad = true;
+  // final _razorpay = Razorpay();
+  // var options;
+  // var textLength = 0;
+  // var textLength1 = 0;
+  // bool isLoad = true;
 
   @override
   void dispose() {
     // TODO: implement dispose
     super.dispose();
-    _razorpay.clear();
+    // _razorpay.clear();
   }
 
   opeChe() {
@@ -335,27 +335,27 @@ class _BookAppointmentViewState extends State<BookAppointmentView> {
       'prefill': {'contact': "", 'email': ""},
     };
     try {
-      _razorpay.open(options);
+      // _razorpay.open(options);
     } catch (e) {
       log(e.toString());
     }
   }
 
-  void _handlePaymentSuccess(PaymentSuccessResponse response) {
-    print("sri..................");
-    print(response.orderId);
-    print("sri..................");
-  }
-
-  void _handlePaymentError(PaymentFailureResponse response) {
-    setState(() {
-    });
-  }
-
-  void _handleExternalWallet(ExternalWalletResponse response) {
-    final snackBar = SnackBar(content: Text(response.walletName.toString()));
-    ScaffoldMessenger.of(context).showSnackBar(snackBar);
-  }
+  // void _handlePaymentSuccess(PaymentSuccessResponse response) {
+  //   print("sri..................");
+  //   print(response.orderId);
+  //   print("sri..................");
+  // }
+  //
+  // void _handlePaymentError(PaymentFailureResponse response) {
+  //   setState(() {
+  //   });
+  // }
+  //
+  // void _handleExternalWallet(ExternalWalletResponse response) {
+  //   final snackBar = SnackBar(content: Text(response.walletName.toString()));
+  //   ScaffoldMessenger.of(context).showSnackBar(snackBar);
+  // }
 
 }
 
